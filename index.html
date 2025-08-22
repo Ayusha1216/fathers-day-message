@@ -14,8 +14,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #ffd6e7 0%, #c9f5ff 100%);
-            color: #5a5a5a;
+            background: linear-gradient(135deg, #ffe8ec 0%, #fff9fb 100%);
+            color: #8a4b76;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -28,74 +28,68 @@
         }
         
         .container {
-            max-width: 650px;
+            max-width: 700px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 25px;
             padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(206, 123, 162, 0.15);
             text-align: center;
             position: relative;
             z-index: 10;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 182, 193, 0.3);
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 25px;
-            color: #ff6b8b;
+            color: #d44d77;
             font-weight: 700;
             font-family: 'Dancing Script', cursive;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .banner {
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            padding: 18px;
-            border-radius: 15px;
+            background: linear-gradient(to right, #ffb6c1, #ffd1dc);
+            padding: 20px;
+            border-radius: 18px;
             margin: 25px 0;
             font-weight: bold;
-            font-size: 1.6rem;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            font-size: 1.7rem;
+            box-shadow: 0 6px 15px rgba(206, 123, 162, 0.2);
             animation: pulse 2s infinite;
             color: white;
             font-family: 'Dancing Script', cursive;
+            position: relative;
         }
         
-        .message {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 30px;
-            border-radius: 20px;
-            margin: 30px 0;
-            line-height: 1.7;
-            font-size: 1.15rem;
-            text-align: left;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            display: none;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.8s ease;
-            color: #6c6c6c;
-            border: 2px dashed #ff9a9e;
-        }
-        
-        .message.show {
-            display: block;
-            transform: translateY(0);
-            opacity: 1;
+        .banner-badge {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff9eb3, #ff7a96);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1rem;
+            transform: rotate(15deg);
+            box-shadow: 0 5px 15px rgba(206, 123, 162, 0.4);
+            z-index: 11;
+            border: 3px solid white;
         }
         
         .reveal-btn {
             display: inline-block;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            background: linear-gradient(to right, #ff9eb3, #ff7a96);
             color: white;
             padding: 18px 35px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.3rem;
-            margin-top: 25px;
+            margin: 20px 0 30px 0;
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(255, 154, 158, 0.4);
             border: none;
@@ -104,78 +98,39 @@
         }
         
         .reveal-btn:hover {
-            background: linear-gradient(to right, #fad0c4, #ff9a9e);
+            background: linear-gradient(to right, #ff7a96, #ff9eb3);
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 12px 25px rgba(255, 154, 158, 0.5);
         }
         
-        .whatsapp-btn {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            padding: 18px 35px;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.3rem;
-            margin-top: 25px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        .message-container {
+            position: relative;
+            margin: 20px 0;
+            min-height: 400px;
+        }
+        
+        .message {
+            background: rgba(255, 246, 248, 0.9);
+            padding: 35px 30px;
+            border-radius: 20px;
+            line-height: 1.7;
+            font-size: 1.15rem;
+            text-align: left;
+            box-shadow: 0 8px 25px rgba(206, 123, 162, 0.15);
             display: none;
-            font-family: 'Poppins', sans-serif;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+            color: #7a3f5a;
+            border: 2px solid #ffd1dc;
+            position: relative;
+            z-index: 10;
         }
         
-        .whatsapp-btn.show {
-            display: inline-block;
-        }
-        
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
-        }
-        
-        .floating-element {
-            position: absolute;
-            z-index: 1;
-        }
-        
-        .heart {
-            font-size: 2rem;
-            color: #ff6b8b;
-            opacity: 0.7;
-            animation: float 15s infinite;
-        }
-        
-        .star {
-            font-size: 1.5rem;
-            color: #ffce5c;
-            opacity: 0.7;
-            animation: float 12s infinite;
-        }
-        
-        .circle {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #a2e2ff;
-            animation: float 18s infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100px) rotate(360deg); }
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        .message.show {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .signature {
@@ -183,7 +138,7 @@
             font-style: italic;
             text-align: right;
             font-size: 1.4rem;
-            color: #ff6b8b;
+            color: #d44d77;
             display: none;
             font-weight: bold;
             font-family: 'Dancing Script', cursive;
@@ -194,74 +149,197 @@
             animation: fadeIn 1.5s ease;
         }
         
-        .instruction {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #ff9a9e;
+        .thank-you-container {
+            margin-top: 30px;
             display: none;
         }
         
-        .instruction.show {
+        .thank-you-container.show {
             display: block;
+            animation: fadeIn 1.5s ease;
         }
         
-        .github-help {
-            margin-top: 25px;
-            padding: 15px;
+        .thank-you-btn {
+            display: inline-block;
+            background: linear-gradient(to right, #a2e2ff, #c9f5ff);
+            color: #2c3e50;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(162, 226, 255, 0.4);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .thank-you-btn:hover {
+            background: linear-gradient(to right, #c9f5ff, #a2e2ff);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(162, 226, 255, 0.5);
+        }
+        
+        .dad-message {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 246, 248, 0.9);
+            border-radius: 15px;
+            font-size: 1.3rem;
+            color: #d44d77;
+            display: none;
+            box-shadow: 0 5px 15px rgba(206, 123, 162, 0.2);
+            border: 2px dashed #ffb6c1;
+            font-family: 'Dancing Script', cursive;
+            font-weight: bold;
+        }
+        
+        .dad-message.show {
+            display: block;
+            animation: fadeIn 2s ease;
+        }
+        
+        /* Balloon styles */
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 60px;
+            border-radius: 50%;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .balloon.show {
+            opacity: 0.7;
+        }
+        
+        .balloon:before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 2px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.7);
-            border-radius: 12px;
-            font-size: 0.9rem;
-            text-align: center;
-            color: #888;
-            border: 1px dashed #ff9a9e;
+            transform: translateX(-50%);
+        }
+        
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .heart {
+            font-size: 2rem;
+            color: #ff6b8b;
+            opacity: 0.7;
+            animation: float 12s infinite;
+        }
+        
+        .star {
+            font-size: 1.5rem;
+            color: #ffce5c;
+            opacity: 0.7;
+            animation: float 10s infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+           50% { transform: scale(1.05); }
+           100% { transform: scale(1); }
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+           100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes balloonFloat {
+            0% { transform: translateY(0) rotate(0deg); }
+           50% { transform: translateY(-10px) rotate(5deg); }
+           100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        /* Message background elements */
+        .message-bg-element {
+            position: absolute;
+            z-index: 5;
+            opacity: 0.15;
+        }
+        
+        .confetti {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            animation: float 8s infinite;
         }
         
         /* Responsive design */
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             .banner { font-size: 1.4rem; padding: 15px; }
-            .message { padding: 20px; font-size: 1.05rem; }
-            .reveal-btn, .whatsapp-btn { padding: 15px 30px; font-size: 1.1rem; }
+            .message { padding: 25px 20px; font-size: 1.05rem; }
+            .reveal-btn, .thank-you-btn { padding: 15px 30px; font-size: 1.1rem; }
             .container { padding: 25px; }
+            .banner-badge { font-size: 0.9rem; padding: 10px 15px; top: -15px; right: 10px; }
+            .balloon { width: 40px; height: 50px; }
+            .dad-message { font-size: 1.1rem; padding: 15px; }
         }
     </style>
 </head>
 <body>
-    <!-- Floating elements for aesthetic -->
-    <div class="floating-element heart" style="left: 10%; animation-delay: 0s;"><i class="fas fa-heart"></i></div>
-    <div class="floating-element star" style="left: 20%; animation-delay: 2s;"><i class="fas fa-star"></i></div>
-    <div class="floating-element circle" style="left: 30%; animation-delay: 4s;"></div>
-    <div class="floating-element heart" style="left: 70%; animation-delay: 1s;"><i class="fas fa-heart"></i></div>
-    <div class="floating-element star" style="left: 80%; animation-delay: 3s;"><i class="fas fa-star"></i></div>
-    <div class="floating-element circle" style="left: 90%; animation-delay: 5s;"></div>
+    <!-- Floating elements in background -->
+    <div class="floating-element heart" style="left: 5%; animation-delay: 0s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element heart" style="left: 15%; animation-delay: 2s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element star" style="left: 25%; animation-delay: 4s;"><i class="fas fa-star"></i></div>
+    <div class="floating-element heart" style="left: 75%; animation-delay: 1s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element heart" style="left: 85%; animation-delay: 3s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element star" style="left: 95%; animation-delay: 5s;"><i class="fas fa-star"></i></div>
     
     <!-- Main content -->
     <div class="container">
         <h1><i class="fas fa-crown"></i> Happy Father's Day! <i class="fas fa-crown"></i></h1>
         
         <div class="banner">
+            <div class="banner-badge">No.1<br>Dad</div>
             <i class="fas fa-gift"></i> A Special Message For You <i class="fas fa-gift"></i>
-        </div>
-        
-        <div class="message" id="message">
-            <p>Happy father's day daddy 🥳! I just wanted to take a moment to tell you how truly thankful I am for you 🙏🥰.</p>
-            <p>I know I don't say it enough, but I appreciate every sacrifice you've made, every piece of advice you've given, and every time you've cheered me on from the sidelines.</p>
-            <p>Thank you for teaching me to be strong and independent, but also for showing me, through your own actions, what kindness, integrity, and unconditional love look like ❤️.</p>
-            <p>You were my first hero, my protector, and my biggest supporter. From fixing my toys to giving me advice on life's biggest challenges, you've always been there.</p>
-            <p>I am the woman I am today because I had a fantastic role model in you. I'm so proud to be your daughter 🥰.</p>
-            <p>I love you more than words can say and your faith in me has given me the courage to chase my dreams ❤️.</p>
         </div>
         
         <button class="reveal-btn" id="revealButton">
             <i class="fas fa-envelope-open-text"></i> Click to Reveal Message
         </button>
         
-        <a href="#" class="whatsapp-btn" id="whatsappButton">
-            <i class="fab fa-whatsapp"></i> Share on WhatsApp
-        </a>
-        
-        <div class="instruction" id="instruction">
-            <p>Click "Share on WhatsApp" to send this message directly to me!</p>
+        <div class="message-container">
+            <!-- Balloons that will appear behind the message -->
+            <div class="balloon" id="balloon1" style="background:#ff6b8b; top: 10%; left: 10%;"></div>
+            <div class="balloon" id="balloon2" style="background:#ff9eb3; top: 15%; left: 80%;"></div>
+            <div class="balloon" id="balloon3" style="background:#ffce5c; top: 70%; left: 15%;"></div>
+            <div class="balloon" id="balloon4" style="background:#a2e2ff; top: 60%; left: 85%;"></div>
+            <div class="balloon" id="balloon5" style="background:#c9f5ff; top: 30%; left: 5%;"></div>
+            <div class="balloon" id="balloon6" style="background:#ff9eb3; top: 25%; left: 90%;"></div>
+            
+            <!-- Message background elements -->
+            <div class="message-bg-element confetti" style="top: 20%; left: 10%; background:#ff6b8b; animation-delay: 0s;"></div>
+            <div class="message-bg-element confetti" style="top: 40%; left: 85%; background:#ffce5c; animation-delay: 2s;"></div>
+            <div class="message-bg-element confetti" style="top: 70%; left: 15%; background:#ff9eb3; animation-delay: 4s;"></div>
+            
+            <div class="message" id="message">
+                <p>Happy father's day daddy 🥳! I just wanted to take a moment to tell you how truly thankful I am for you 🙏🥰.</p>
+                <p>I know I don't say it enough, but I appreciate every sacrifice you've made, every piece of advice you've given, and every time you've cheered me on from the sidelines.</p>
+                <p>Thank you for teaching me to be strong and independent, but also for showing me, through your own actions, what kindness, integrity, and unconditional love look like ❤️.</p>
+                <p>You were my first hero, my protector, and my biggest supporter. From fixing my toys to giving me advice on life's biggest challenges, you've always been there.</p>
+                <p>I am the woman I am today because I had a fantastic role model in you. I'm so proud to be your daughter 🥰.</p>
+                <p>I love you more than words can say and your faith in me has given me the courage to chase my dreams ❤️.</p>
+            </div>
         </div>
         
         <div class="signature" id="signature">
@@ -269,35 +347,75 @@
             <p>Sumi 💖</p>
         </div>
         
-        <div class="github-help">
-            <p>No photo needed! Just send the GitHub Pages link to your dad.</p>
+        <div class="thank-you-container" id="thankYouContainer">
+            <button class="thank-you-btn" id="thankYouButton">
+                <i class="fas fa-heart"></i> Thank You
+            </button>
+            
+            <div class="dad-message" id="dadMessage">
+                Have a great day dad! 🌟
+            </div>
         </div>
     </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Create more floating elements
-            for (let i = 0; i < 15; i++) {
+            for (let i = 0; i < 10; i++) {
                 createFloatingElement();
             }
             
-            // Set up WhatsApp button
-            const message = encodeURIComponent(`Happy father's day daddy 🥳! I just wanted to take a moment to tell you how truly thankful I am for you 🙏🥰. I know I don't say it enough, but I appreciate every sacrifice you've made, every piece of advice you've given, and every time you've cheered me on from the sidelines. Thank you for teaching me to be strong and independent, but also for showing me, through your own actions, what kindness, integrity, and unconditional love look like ❤️. You were my first hero, my protector, and my biggest supporter. From fixing my toys to giving me advice on life's biggest challenges, you've always been there. I am the woman I am today because I had a fantastic role model in you. I'm so proud to be your daughter 🥰. I love you more than words can say and your faith in me has given me the courage to chase my dreams ❤️.`);
-            
-            document.getElementById('whatsappButton').href = `https://wa.me/?text=${message}`;
+            // Create message background elements
+            for (let i = 0; i < 8; i++) {
+                createMessageBgElement();
+            }
             
             // Set up reveal button
             document.getElementById('revealButton').addEventListener('click', function() {
                 document.getElementById('message').classList.add('show');
-                document.getElementById('whatsappButton').classList.add('show');
                 document.getElementById('signature').classList.add('show');
-                document.getElementById('instruction').classList.add('show');
+                document.getElementById('thankYouContainer').classList.add('show');
+                
+                // Show the balloons with a slight delay for a nice effect
+                setTimeout(() => {
+                    document.getElementById('balloon1').classList.add('show');
+                    document.getElementById('balloon2').classList.add('show');
+                }, 300);
+                
+                setTimeout(() => {
+                    document.getElementById('balloon3').classList.add('show');
+                    document.getElementById('balloon4').classList.add('show');
+                }, 600);
+                
+                setTimeout(() => {
+                    document.getElementById('balloon5').classList.add('show');
+                    document.getElementById('balloon6').classList.add('show');
+                }, 900);
+                
+                // Add floating animation to balloons
+                const balloons = document.querySelectorAll('.balloon');
+                balloons.forEach(balloon => {
+                    balloon.style.animation = `balloonFloat ${3 + Math.random() * 2}s infinite ease-in-out`;
+                    balloon.style.animationDelay = `${Math.random() * 2}s`;
+                });
+                
                 this.style.display = 'none';
+            });
+            
+            // Set up thank you button
+            document.getElementById('thankYouButton').addEventListener('click', function() {
+                document.getElementById('dadMessage').classList.add('show');
+                this.style.display = 'none';
+                
+                // Add more floating elements as celebration
+                for (let i = 0; i < 10; i++) {
+                    createCelebrationElement();
+                }
             });
             
             // Function to create floating elements
             function createFloatingElement() {
-                const elements = ['heart', 'star', 'circle'];
+                const elements = ['heart', 'star'];
                 const elementType = elements[Math.floor(Math.random() * elements.length)];
                 
                 const element = document.createElement('div');
@@ -305,12 +423,10 @@
                 
                 if (elementType === 'heart') {
                     element.innerHTML = '<i class="fas fa-heart"></i>';
-                    element.style.color = ['#ff6b8b', '#ff9a9e', '#ffce5c'][Math.floor(Math.random() * 3)];
-                } else if (elementType === 'star') {
-                    element.innerHTML = '<i class="fas fa-star"></i>';
-                    element.style.color = ['#ffce5c', '#a2e2ff', '#c9f5ff'][Math.floor(Math.random() * 3)];
+                    element.style.color = ['#ff6b8b', '#ff9eb3', '#ffce5c'][Math.floor(Math.random() * 3)];
                 } else {
-                    element.style.background = ['#a2e2ff', '#c9f5ff', '#ffd6e7'][Math.floor(Math.random() * 3)];
+                    element.innerHTML = '<i class="fas fa-star"></i>';
+                    element.style.color = ['#ffce5c', '#a2e2ff', '#ff9eb3'][Math.floor(Math.random() * 3)];
                 }
                 
                 element.style.left = Math.random() * 100 + 'vw';
@@ -318,6 +434,45 @@
                 element.style.fontSize = (1 + Math.random() * 2) + 'rem';
                 
                 document.body.appendChild(element);
+            }
+            
+            // Function to create celebration elements
+            function createCelebrationElement() {
+                const elements = ['heart', 'star'];
+                const elementType = elements[Math.floor(Math.random() * elements.length)];
+                
+                const element = document.createElement('div');
+                element.className = `floating-element ${elementType}`;
+                
+                if (elementType === 'heart') {
+                    element.innerHTML = '<i class="fas fa-heart"></i>';
+                    element.style.color = ['#ff6b8b', '#ff9eb3', '#ffce5c'][Math.floor(Math.random() * 3)];
+                } else {
+                    element.innerHTML = '<i class="fas fa-star"></i>';
+                    element.style.color = ['#ffce5c', #a2e2ff', '#ff9eb3'][Math.floor(Math.random() * 3)];
+                }
+                
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.animationDelay = Math.random() * 2 + 's';
+                element.style.fontSize = (1 + Math.random() * 2) + 'rem';
+                element.style.animation = 'float 6s infinite';
+                
+                document.body.appendChild(element);
+            }
+            
+            // Function to create message background elements
+            function createMessageBgElement() {
+                const element = document.createElement('div');
+                element.className = 'message-bg-element confetti';
+                
+                element.style.background = ['#ff6b8b', '#ff9eb3', '#ffce5c', '#a2e2ff'][Math.floor(Math.random() * 4)];
+                element.style.top = Math.random() * 100 + '%';
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 6 + 's';
+                element.style.width = (5 + Math.random() * 15) + 'px';
+                element.style.height = (5 + Math.random() * 15) + 'px';
+                
+                document.querySelector('.message-container').appendChild(element);
             }
         });
     </script>
