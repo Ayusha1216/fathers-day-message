@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Father's Day!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffd6e7 0%, #c9f5ff 100%);
+            color: #5a5a5a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            color: #ff6b8b;
+            font-weight: 700;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .banner {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            padding: 18px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-weight: bold;
+            font-size: 1.6rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .message {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            line-height: 1.7;
+            font-size: 1.15rem;
+            text-align: left;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            display: none;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease;
+            color: #6c6c6c;
+            border: 2px dashed #ff9a9e;
+        }
+        
+        .message.show {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .reveal-btn {
+            display: inline-block;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 154, 158, 0.4);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .reveal-btn:hover {
+            background: linear-gradient(to right, #fad0c4, #ff9a9e);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(255, 154, 158, 0.5);
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            display: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .whatsapp-btn.show {
+            display: inline-block;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
+        }
+        
+        .floating-element {
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .heart {
+            font-size: 2rem;
+            color: #ff6b8b;
+            opacity: 0.7;
+            animation: float 15s infinite;
+        }
+        
+        .star {
+            font-size: 1.5rem;
+            color: #ffce5c;
+            opacity: 0.7;
+            animation: float 12s infinite;
+        }
+        
+        .circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #a2e2ff;
+            animation: float 18s infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .signature {
+            margin-top: 35px;
+            font-style: italic;
+            text-align: right;
+            font-size: 1.4rem;
+            color: #ff6b8b;
+            display: none;
+            font-weight: bold;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .signature.show {
+            display: block;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .instruction {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #ff9a9e;
+            display: none;
+        }
+        
+        .instruction.show {
+            display: block;
+        }
+        
+        .github-help {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #888;
+            border: 1px dashed #ff9a9e;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .banner { font-size: 1.4rem; padding: 15px; }
+            .message { padding: 20px; font-size: 1.05rem; }
+            .reveal-btn, .whatsapp-btn { padding: 15px 30px; font-size: 1.1rem; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating elements for aesthetic -->
+    <div class="floating-element heart" style="left: 10%; animation-delay: 0s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element star" style="left: 20%; animation-delay: 2s;"><i class="fas fa-star"></i></div>
+    <div class="floating-element circle" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="floating-element heart" style="left: 70%; animation-delay: 1s;"><i class="fas fa-heart"></i></div>
+    <div class="floating-element star" style="left: 80%; animation-delay: 3s;"><i class="fas fa-star"></i></div>
+    <div class="floating-element circle" style="left: 90%; animation-delay: 5s;"></div>
+    
+    <!-- Main content -->
+    <div class="container">
+        <h1><i class="fas fa-crown"></i> Happy Father's Day! <i class="fas fa-crown"></i></h1>
+        
+        <div class="banner">
+            <i class="fas fa-gift"></i> A Special Message For You <i class="fas fa-gift"></i>
+        </div>
+        
+        <div class="message" id="message">
+            <p>Happy father's day daddy 🥳! I just wanted to take a moment to tell you how truly thankful I am for you 🙏🥰.</p>
+            <p>I know I don't say it enough, but I appreciate every sacrifice you've made, every piece of advice you've given, and every time you've cheered me on from the sidelines.</p>
+            <p>Thank you for teaching me to be strong and independent, but also for showing me, through your own actions, what kindness, integrity, and unconditional love look like ❤️.</p>
+            <p>You were my first hero, my protector, and my biggest supporter. From fixing my toys to giving me advice on life's biggest challenges, you've always been there.</p>
+            <p>I am the woman I am today because I had a fantastic role model in you. I'm so proud to be your daughter 🥰.</p>
+            <p>I love you more than words can say and your faith in me has given me the courage to chase my dreams ❤️.</p>
+        </div>
+        
+        <button class="reveal-btn" id="revealButton">
+            <i class="fas fa-envelope-open-text"></i> Click to Reveal Message
+        </button>
+        
+        <a href="#" class="whatsapp-btn" id="whatsappButton">
+            <i class="fab fa-whatsapp"></i> Share on WhatsApp
+        </a>
+        
+        <div class="instruction" id="instruction">
+            <p>Click "Share on WhatsApp" to send this message directly to me!</p>
+        </div>
+        
+        <div class="signature" id="signature">
+            <p>Your loving daughter,</p>
+            <p>Sumi 💖</p>
+        </div>
+        
+        <div class="github-help">
+            <p>No photo needed! Just send the GitHub Pages link to your dad.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create more floating elements
+            for (let i = 0; i < 15; i++) {
+                createFloatingElement();
+            }
+            
+            // Set up WhatsApp button
+            const message = encodeURIComponent(`Happy father's day daddy 🥳! I just wanted to take a moment to tell you how truly thankful I am for you 🙏🥰. I know I don't say it enough, but I appreciate every sacrifice you've made, every piece of advice you've given, and every time you've cheered me on from the sidelines. Thank you for teaching me to be strong and independent, but also for showing me, through your own actions, what kindness, integrity, and unconditional love look like ❤️. You were my first hero, my protector, and my biggest supporter. From fixing my toys to giving me advice on life's biggest challenges, you've always been there. I am the woman I am today because I had a fantastic role model in you. I'm so proud to be your daughter 🥰. I love you more than words can say and your faith in me has given me the courage to chase my dreams ❤️.`);
+            
+            document.getElementById('whatsappButton').href = `https://wa.me/?text=${message}`;
+            
+            // Set up reveal button
+            document.getElementById('revealButton').addEventListener('click', function() {
+                document.getElementById('message').classList.add('show');
+                document.getElementById('whatsappButton').classList.add('show');
+                document.getElementById('signature').classList.add('show');
+                document.getElementById('instruction').classList.add('show');
+                this.style.display = 'none';
+            });
+            
+            // Function to create floating elements
+            function createFloatingElement() {
+                const elements = ['heart', 'star', 'circle'];
+                const elementType = elements[Math.floor(Math.random() * elements.length)];
+                
+                const element = document.createElement('div');
+                element.className = `floating-element ${elementType}`;
+                
+                if (elementType === 'heart') {
+                    element.innerHTML = '<i class="fas fa-heart"></i>';
+                    element.style.color = ['#ff6b8b', '#ff9a9e', '#ffce5c'][Math.floor(Math.random() * 3)];
+                } else if (elementType === 'star') {
+                    element.innerHTML = '<i class="fas fa-star"></i>';
+                    element.style.color = ['#ffce5c', '#a2e2ff', '#c9f5ff'][Math.floor(Math.random() * 3)];
+                } else {
+                    element.style.background = ['#a2e2ff', '#c9f5ff', '#ffd6e7'][Math.floor(Math.random() * 3)];
+                }
+                
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.animationDelay = Math.random() * 6 + 's';
+                element.style.fontSize = (1 + Math.random() * 2) + 'rem';
+                
+                document.body.appendChild(element);
+            }
+        });
+    </script>
+</body>
+</html>
